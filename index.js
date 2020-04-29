@@ -133,7 +133,7 @@ function processProduct(num1, num2, callback) {
  * should return 3.
 */
 function processDuplicateFree(list, callback) {
-   
+   return callback(list.filter((item, pos) => list.indexof(item) === pos))
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -156,8 +156,9 @@ function processDuplicateFree(list, callback) {
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
 function lowerCaseStrings(strings){
-  var lowerCase = [];
-    
+  let newArray = [];  
+  strings.forEach((item) => newArray.push(item.toLowerCase()));
+  return newArray
 }
 
 /**
@@ -175,8 +176,9 @@ function lowerCaseStrings(strings){
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(strings) {
+  let newArray = strings.map((item) => item === 'apple')
+  return newArray
 }
 
 /**
@@ -195,8 +197,8 @@ function isItAnApple(/* code here */) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
-  /* code here */
+function removeApple(strings) {
+  
 }
 
 /**
@@ -214,8 +216,9 @@ function removeApple(/* code here */) {
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
-  /* code here */
+function stringSmash(strings) {
+  let newString = strings.reduce ((a, b) => a + b)
+  return newString
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
